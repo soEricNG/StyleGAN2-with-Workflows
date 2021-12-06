@@ -98,7 +98,7 @@ jobs:
 
   evaluatePretrainedModel:
     resources:
-      instance-type: V100 # P6000 or V100 will run this step faster if available, but cost more
+      instance-type: P6000 # P6000 or V100 will run this step faster if available, but cost more
     needs:
       - cloneStyleGAN2Repo
       - getPretrainedModel
@@ -174,7 +174,7 @@ jobs:
 
   trainOurModel:
     resources:
-      instance-type: V100 # Or P6000, V100
+      instance-type: P6000 # Or P6000, V100
     needs:
       - cloneStyleGAN2Repo
     inputs:
@@ -217,7 +217,7 @@ jobs:
 
   evaluateOurModel:
     resources:
-      instance-type: V100 # Or P6000, V100
+      instance-type: P6000 # Or P6000, V100
     needs:
       - cloneStyleGAN2Repo
       - trainOurModel
